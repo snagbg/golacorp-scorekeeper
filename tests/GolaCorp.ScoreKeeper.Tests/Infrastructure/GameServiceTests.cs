@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GolaCorp.ScoreKeeper.Tests.Infrastructure
+﻿namespace GolaCorp.ScoreKeeper.Tests.Infrastructure
 {
     public class GameServiceTests
     {
-        
+
     }
 }

@@ -1,8 +1,7 @@
 using GolaCorp.ScoreKeeper.Domain;
-using System;
-using Xunit;
 using Shouldly;
 using System.Linq;
+using Xunit;
 
 namespace GolaCorp.ScoreKeeper.Tests
 {
@@ -35,7 +34,7 @@ namespace GolaCorp.ScoreKeeper.Tests
             ushort numberOfPinsKnowkedDown = 8;
             var game = new Game();
             var playerScore = new RollTwoScore()
-            {                
+            {
                 NumberOfPinsKnockedDown = numberOfPinsKnowkedDown,
                 FrameNumber = 1
             };
@@ -55,7 +54,7 @@ namespace GolaCorp.ScoreKeeper.Tests
             ushort numberOfPinsKnowkedDownInRollTwo = 1;
             var game = new Game();
             var rollOneScore = new RollOneScore()
-            {               
+            {
                 NumberOfPinsKnockedDown = numberOfPinsKnowkedDownInRollOne,
                 FrameNumber = 1
             };
@@ -88,8 +87,8 @@ namespace GolaCorp.ScoreKeeper.Tests
             {
                 NumberOfPinsKnockedDown = 3,
                 FrameNumber = 1,
-                WasSpare  = true
-                
+                WasSpare = true
+
             };
             game.UpdateRollOneScore(rollOneScore);
             game.UpdateRollTwoScore(rollTwoScore);
@@ -106,7 +105,7 @@ namespace GolaCorp.ScoreKeeper.Tests
 
             //Assert            
             game.Frames.Single(x => x.FrameNumber == 1).Scores.First().TotalPoints.ShouldBe(17);
-            game.Frames.Single(x=>x.FrameNumber == 2).Scores.First().TotalPoints.ShouldBe(25);
+            game.Frames.Single(x => x.FrameNumber == 2).Scores.First().TotalPoints.ShouldBe(25);
 
         }
 
@@ -120,15 +119,15 @@ namespace GolaCorp.ScoreKeeper.Tests
                 NumberOfPinsKnockedDown = 10,
                 FrameNumber = 1,
                 WasStrike = true
-                
+
             };
             var rollTwoScore = new RollTwoScore()
             {
                 NumberOfPinsKnockedDown = 3,
-                FrameNumber = 1               
+                FrameNumber = 1
             };
 
-            game.UpdateRollOneScore(rollOneScore);           
+            game.UpdateRollOneScore(rollOneScore);
 
             rollOneScore.FrameNumber = 2;
             rollTwoScore.FrameNumber = 2;

@@ -19,7 +19,7 @@ namespace GolaCorp.ScoreKeeper.Domain
             var frame = GetFrame(rollOneScore.FrameNumber);
             var playerScore = GetPlayerScore(frame, rollOneScore.PlayerId);
             UpdateRollOne(rollOneScore, playerScore);
-            if (frame.FrameNumber > 1 && frame.FrameNumber < 11)          
+            if (frame.FrameNumber > 1 && frame.FrameNumber < 11)
             {
                 PlayerScore previousFramePlayerScore = GetPreviousFramePlayerScore(rollOneScore, frame);
                 if (previousFramePlayerScore.FirstRoll.WasStrike && playerScore.FirstRoll.WasStrike)
@@ -27,11 +27,11 @@ namespace GolaCorp.ScoreKeeper.Domain
                     previousFramePlayerScore.TotalPoints += 10;
                     playerScore.TotalPoints += previousFramePlayerScore.TotalPoints;
                 }
-                if(previousFramePlayerScore.SecondRoll.WasSpare)
+                if (previousFramePlayerScore.SecondRoll.WasSpare)
                 {
                     previousFramePlayerScore.TotalPoints += rollOneScore.NumberOfPinsKnockedDown;
                     playerScore.TotalPoints += previousFramePlayerScore.TotalPoints;
-                }               
+                }
             }
             playerScore.TotalPoints += rollOneScore.NumberOfPinsKnockedDown;
         }
@@ -41,14 +41,14 @@ namespace GolaCorp.ScoreKeeper.Domain
             var frame = GetFrame(rollTwoScore.FrameNumber);
             var playerScore = GetPlayerScore(frame, rollTwoScore.PlayerId);
             UpdateRollTwo(rollTwoScore, playerScore);
-            if (frame.FrameNumber > 1 && frame.FrameNumber < 11)           
-            {             
-                PlayerScore previousFramePlayerScore = GetPreviousFramePlayerScore(rollTwoScore, frame);            
-                if(previousFramePlayerScore.FirstRoll.WasStrike)
+            if (frame.FrameNumber > 1 && frame.FrameNumber < 11)
+            {
+                PlayerScore previousFramePlayerScore = GetPreviousFramePlayerScore(rollTwoScore, frame);
+                if (previousFramePlayerScore.FirstRoll.WasStrike)
                 {
                     previousFramePlayerScore.TotalPoints += playerScore.FirstRoll.Points + playerScore.SecondRoll.Points;
                     playerScore.TotalPoints += previousFramePlayerScore.TotalPoints;
-                }               
+                }
             }
             playerScore.TotalPoints += rollTwoScore.NumberOfPinsKnockedDown;
 
@@ -72,7 +72,7 @@ namespace GolaCorp.ScoreKeeper.Domain
         {
             playerScore.FirstRoll.Points = rollOneScore.NumberOfPinsKnockedDown;
             playerScore.FirstRoll.WasStrike = rollOneScore.WasStrike;
-        }    
+        }
 
         private Frame GetFrame(ushort FrameNumber)
         {

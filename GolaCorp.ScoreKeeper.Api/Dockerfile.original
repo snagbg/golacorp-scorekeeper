@@ -8,8 +8,6 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 COPY ["GolaCorp.ScoreKeeper.Api/GolaCorp.ScoreKeeper.Api.csproj", "GolaCorp.ScoreKeeper.Api/"]
-COPY ["GolaCorp.ScoreKeeper.Domain/GolaCorp.ScoreKeeper.Domain.csproj", "GolaCorp.ScoreKeeper.Domain/"]
-COPY ["GolaCorp.ScoreKeeper.Infrastructure/GolaCorp.ScoreKeeper.Infrastructure.csproj", "GolaCorp.ScoreKeeper.Infrastructure/"]
 RUN dotnet restore "GolaCorp.ScoreKeeper.Api/GolaCorp.ScoreKeeper.Api.csproj"
 COPY . .
 WORKDIR "/src/GolaCorp.ScoreKeeper.Api"

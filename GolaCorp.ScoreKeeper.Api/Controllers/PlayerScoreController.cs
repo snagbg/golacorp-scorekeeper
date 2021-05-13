@@ -1,11 +1,7 @@
 ﻿using GolaCorp.ScoreKeeper.Api.Models;
 using GolaCorp.ScoreKeeper.Domain;
 using GolaCorp.ScoreKeeper.Domain.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GolaCorp.ScoreKeeper.Api.Controllers

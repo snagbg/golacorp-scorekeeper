@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GolaCorp.ScoreKeeper.Domain
+﻿namespace GolaCorp.ScoreKeeper.Domain
 {
     public class Roll
     {
-        public int Points { get; set;  }
+        public int Points { get; set; }
     }
 
     public class FirstRoll : Roll

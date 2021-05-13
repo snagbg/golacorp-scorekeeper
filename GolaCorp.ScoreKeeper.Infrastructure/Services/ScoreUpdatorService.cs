@@ -1,8 +1,6 @@
 ﻿using GolaCorp.ScoreKeeper.Domain;
 using GolaCorp.ScoreKeeper.Domain.Services;
 using GolaCorp.ScoreKeeper.Infrastructure.Repositories;
-using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GolaCorp.ScoreKeeper.Infrastructure.Services
